@@ -12,9 +12,9 @@ public class AutoconfigDemoApplication {
         SpringApplication.run(AutoconfigDemoApplication.class, args);
     }
 
-    @Bean
-    public HomeSourceApplication getHomeSourceApplication(){
-        return new HomeSourceApplication("自己配置");
-    }
+//    @Bean
+//    public HomeSourceApplication getHomeSourceApplication(){
+//        return new HomeSourceApplication("自己配置");
+//    }
 
 }
