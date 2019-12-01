@@ -1,0 +1,7 @@
+这是一个自定义Properties处理类加载自己的properties文件
+ 
+步骤：
+
+1. 写好自己的配置文件
+2. 定义一个process类实现EnvironmentPostProcess或者BeanFactoryPostProcess，实现其中的方法，通过ClassPathResource加载到自己定义的文件，把它加到spring config的environment的propertySources列表中
+3. 在spring.factories中指定当前EnvironmentPostProcess的实现类为自己自定义的类
