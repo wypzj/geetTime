@@ -1,0 +1,9 @@
+#负载均衡源码分析
+由@LoadBalanced注解出发，spring会对加了@LoadBalanced注解的请求进行拦截。
+是通过LoadBalancerInterceptor类（实现了ClientHttpRequestInterceptor接口）中的intercept方法。
+该方法取出请求的host跟port，根据serverid查询合适的服务实例
+（Ribbon会根据不同的负载均衡策略选择服务），
+最后调用（Ribbon）LoadBalancerClient类，
+将server包装成ribbonserver，
+最后通过request的apply方法进行调用
+
