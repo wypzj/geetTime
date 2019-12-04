@@ -1,0 +1,6 @@
+server:
+  port: 9087
+
+waiter:
+  servers:
+  - localhost:9005
