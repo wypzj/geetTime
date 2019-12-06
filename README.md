@@ -14,3 +14,7 @@ springboot实现自己的自动配置以及起步依赖 //项目路径：https:/
 2019/12/04
 
 实现自定义DiscoveryClient，不理解机制，继续学习
+
+2019/12/06
+
+不使用springcloud实现一个熔断机制（AOP实现）,zookeeper-client-demo是一个client服务提供放，circuit-protect-demo是consumer调用方，circuit-protect-demo中使用aop实现一个拦截，在其中判断当前调用是否抛出异常，规定次数后就熔断。
