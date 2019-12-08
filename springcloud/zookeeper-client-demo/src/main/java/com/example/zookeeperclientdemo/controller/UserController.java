@@ -27,4 +27,14 @@ public class UserController {
             add(new User(4L,"关羽"));
         }};
     }
+
+    @GetMapping("/getYoungUserList")
+    public List<User> getYoungUserList(){
+        return new ArrayList<User>(){{
+            add(new User(1L,"小赵云"));
+            add(new User(2L,"小张飞"));
+            add(new User(3L,"小刘备"));
+            add(new User(4L,"小关羽"));
+        }};
+    }
 }
