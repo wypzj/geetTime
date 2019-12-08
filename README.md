@@ -22,7 +22,9 @@ springboot实现自己的自动配置以及起步依赖 //项目路径：https:/
 
 2019/12/06
 
-不使用springcloud实现一个熔断机制（AOP实现）,zookeeper-client-demo是一个client服务提供放，circuit-protect-demo是consumer调用方，circuit-protect-demo中使用aop实现一个拦截，在其中判断当前调用是否抛出异常，规定次数后就熔断。项目路基：https://github.com/wypzj/geetTime/tree/master/springcloud
+不使用springcloud实现一个熔断机制（AOP实现）,zookeeper-client-demo是一个client服务提供放，circuit-protect-demo是consumer调用方，circuit-protect-demo中使用aop实现一个拦截，在其中判断当前调用是否抛出异常，规定次数后就熔断。项目路径：https://github.com/wypzj/geetTime/tree/master/springcloud
 
 2019/12/08
-使用resilience4j注解方式实现服务熔断。项目路基：https://github.com/wypzj/geetTime/tree/master/springcloud/resilience-demo
+使用resilience4j注解方式实现服务熔断。使用resilience4j注解方式实现服务限流bulhead方式
+
+项目路径：https://github.com/wypzj/geetTime/tree/master/springcloud/resilience-demo
