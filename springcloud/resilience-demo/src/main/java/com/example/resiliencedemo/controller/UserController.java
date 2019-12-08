@@ -2,6 +2,7 @@ package com.example.resiliencedemo.controller;
 
 import com.example.resiliencedemo.domain.User;
 import com.example.resiliencedemo.service.UserServiceFeign;
+import io.github.resilience4j.bulkhead.annotation.Bulkhead;
 import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
 import io.github.resilience4j.circuitbreaker.CircuitBreaker;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
@@ -26,22 +27,23 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserServiceFeign userServiceFeign;
-//    private CircuitBreaker circuitBreaker;
-//
-//    public UserController(CircuitBreakerRegistry registry){
-//        circuitBreaker = registry.circuitBreaker("younguser");
-//    }
+    private CircuitBreaker circuitBreaker;
+
+    public UserController(CircuitBreakerRegistry registry){
+        circuitBreaker = registry.circuitBreaker("younguser");
+    }
     @GetMapping("/getUserList")
     @io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker(name="user")
+    @Bulkhead(name="user")
     public List<User> getUserList(){
         return userServiceFeign.getUserList();
     }
 
-//    @GetMapping("/getYoungUserList")
-//    public List<User> getYoungUserList(){
-//        return Try.ofSupplier(
-//                CircuitBreaker.decorateSupplier(circuitBreaker,()->userServiceFeign.getYoungUserList()))
-//                .recover(CallNotPermittedException.class, Collections.emptyList())
-//                .get();
-//    }
+    @GetMapping("/getYoungUserList")
+    public List<User> getYoungUserList(){
+        return Try.ofSupplier(
+                CircuitBreaker.decorateSupplier(circuitBreaker,()->userServiceFeign.getYoungUserList()))
+                .recover(CallNotPermittedException.class, Collections.emptyList())
+                .get();
+    }
 }
