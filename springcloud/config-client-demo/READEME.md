@@ -1,0 +1,19 @@
+# 配置中心
+
+配置中心的实质是，springcloud定义了一组api，cloud实现这组api去读取放在远程的一些配置文件。
+
+都知道配置文件读到框架中都是一个个propertysource类。配置中心也是这样，只不过配置中心是读取的远程的配置文件。
+
+springcloud加载配置文件的顺序
+* 应用-profile.yml
+* 应用.yml
+* application-profile.yml
+* application.yml
+application.yml只是springboot提供的默认的配置文件，我们可以自己定义配置文件，同时自己定义的配置文件的加载优先级是高于默认配置文件的。
+
+springcloud默认是使用基于git搭建的配置中心，定义了CompositePropertySource类,PropertrySourceLocator会构建一个restTemplate去请求远程的配置文件，加载到本地。
+当远程的配置文件修改，git会广播通知，configclient这里需要使用actuator/refresh去刷新加载配置。这样服务集群大了，每台机器都要refresh一次，不好维护而且容易出错
+
+同时springcloud还提供了springcloudBus通过消息广播的方式去动态的刷新配置
+# 配置文件的动态刷新
+当远程的配置文件被修改了，我们应该需要监听到修改，然后加载一边修改后的配置文件，以保证使用的都是最新的配置文件
