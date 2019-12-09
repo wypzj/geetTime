@@ -28,3 +28,8 @@ springboot实现自己的自动配置以及起步依赖 //项目路径：https:/
 使用resilience4j注解方式实现服务熔断。使用resilience4j注解方式实现服务限流bulhead方式
 
 项目路径：https://github.com/wypzj/geetTime/tree/master/springcloud/resilience-demo
+
+2019/12/09
+实现springcloud基于git搭建的config-server和config-client
+
+项目路径：https://github.com/wypzj/geetTime/tree/master/springcloud/config-server-demo
