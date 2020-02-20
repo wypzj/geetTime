@@ -45,11 +45,11 @@
             <artifactId>my-spring-boot-start</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.example</groupId>-->
-            <!--<artifactId>home-autoimport</artifactId>-->
-            <!--<version>1.0-SNAPSHOT</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>home-autoimport</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!--<dependency>-->
             <!--<groupId>com.example</groupId>-->
             <!--<artifactId>my-autoconfig</artifactId>-->
