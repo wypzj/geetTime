@@ -1,4 +1,4 @@
-package com.design.pattern.study.singleton;
+package com.design.pattern.study.singletonpattern;
 
 /**
  * @author a small asshole
