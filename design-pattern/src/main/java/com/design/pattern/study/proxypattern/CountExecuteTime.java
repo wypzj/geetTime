@@ -1,5 +1,9 @@
 package com.design.pattern.study.proxypattern;
 
+import com.design.pattern.study.proxypattern.denamicproxy.DenamicProxyHandler;
+
+import java.lang.reflect.Proxy;
+
 /**
  * @author a small asshole
  * @version 1.0
@@ -9,8 +13,14 @@ package com.design.pattern.study.proxypattern;
  */
 public class CountExecuteTime {
     public static void main(String[] args) {
-        UserRealImpl userReal = new UserRealImpl();
-        CommonProxy commonProxy = new CommonProxy(userReal);
-        commonProxy.login();
+        //非动态代理
+        UserInterface userReal = new UserRealImpl();
+//        CommonProxy commonProxy = new CommonProxy(userReal);
+//        commonProxy.login();
+        //动态代理
+        UserInterface userProxyObject = (UserInterface)Proxy.newProxyInstance(userReal.getClass().getClassLoader()
+                , userReal.getClass().getInterfaces()
+                , new DenamicProxyHandler(userReal));
+        userProxyObject.login();
     }
 }

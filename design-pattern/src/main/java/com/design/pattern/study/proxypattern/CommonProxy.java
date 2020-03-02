@@ -8,9 +8,9 @@ package com.design.pattern.study.proxypattern;
  * @since 1.0
  */
 public class CommonProxy implements UserInterface {
-    private UserRealImpl userReal;
+    private UserInterface userReal;
 
-    public CommonProxy(UserRealImpl realUserObject){
+    public CommonProxy(UserInterface realUserObject){
         this.userReal = realUserObject;
     }
 
