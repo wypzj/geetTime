@@ -1,4 +1,4 @@
-package com.design.pattern.study.proxypattern.denamicproxy;
+package com.design.pattern.study.proxypattern.dynamicproxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -10,10 +10,10 @@ import java.lang.reflect.Method;
  * @date 2020/3/2
  * @since 1.0
  */
-public class DenamicProxyHandler implements InvocationHandler {
+public class DynamicProxyHandler implements InvocationHandler {
     private Object realObject;
 
-    public DenamicProxyHandler(Object realObject){
+    public DynamicProxyHandler(Object realObject){
         this.realObject = realObject;
     }
 

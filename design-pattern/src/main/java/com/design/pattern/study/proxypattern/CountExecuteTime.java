@@ -1,6 +1,6 @@
 package com.design.pattern.study.proxypattern;
 
-import com.design.pattern.study.proxypattern.denamicproxy.DenamicProxyHandler;
+import com.design.pattern.study.proxypattern.dynamicproxy.DynamicProxyHandler;
 
 import java.lang.reflect.Proxy;
 
@@ -20,7 +20,7 @@ public class CountExecuteTime {
         //动态代理
         UserInterface userProxyObject = (UserInterface)Proxy.newProxyInstance(userReal.getClass().getClassLoader()
                 , userReal.getClass().getInterfaces()
-                , new DenamicProxyHandler(userReal));
+                , new DynamicProxyHandler(userReal));
         userProxyObject.login();
     }
 }
