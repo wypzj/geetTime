@@ -1,5 +1,7 @@
 package com.design.pattern.study.observerpattern.classic;
 
+import com.design.pattern.study.observerpattern.common.Observer;
+
 /**
  * @author a small asshole
  * @version 1.0

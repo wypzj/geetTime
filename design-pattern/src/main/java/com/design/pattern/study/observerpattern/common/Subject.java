@@ -1,4 +1,4 @@
-package com.design.pattern.study.observerpattern.classic;
+package com.design.pattern.study.observerpattern.common;
 
 /**
  * @author a small asshole

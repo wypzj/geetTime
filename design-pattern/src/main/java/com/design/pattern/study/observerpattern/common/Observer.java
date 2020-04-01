@@ -1,4 +1,4 @@
-package com.design.pattern.study.observerpattern.classic;
+package com.design.pattern.study.observerpattern.common;
 
 /**
  * @author a small asshole
@@ -8,5 +8,5 @@ package com.design.pattern.study.observerpattern.classic;
  * @since TODO
  */
 public interface Observer {
-    public void update();
+    void update();
 }
