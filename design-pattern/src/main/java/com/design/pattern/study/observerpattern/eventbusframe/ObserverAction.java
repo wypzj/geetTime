@@ -12,7 +12,13 @@ import java.lang.reflect.Method;
  * @since 1.0
  */
 public class ObserverAction {
+    /**
+     * 观察者对象
+     */
     private Object target;
+    /**
+     * 观察者对象能接受消息的方法
+     */
     private Method method;
 
     public ObserverAction(Object target, Method method) {
